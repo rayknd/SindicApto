@@ -1,0 +1,7 @@
+{
+  "name": "sindicApto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
