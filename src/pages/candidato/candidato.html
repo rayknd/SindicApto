@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Perfil do Candidato</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label>Nome:</ion-label>
+        <ion-input type="text" clearIput="true" readyonly="true" disabled [(ngModel)]="candidato.nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sobrenome:</ion-label>
+        <ion-input type="text" clearIput="true" readyonly="true" disabled [(ngModel)]="candidato.sobrenome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Idade:</ion-label>
+        <ion-input type="text" clearIput="true" readyonly="true" disabled [(ngModel)]="candidato.idade"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apartamento:</ion-label>
+        <ion-input type="text" clearIput="true" readyonly="true" disabled [(ngModel)]="candidato.apartamento"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Bloco:</ion-label>
+        <ion-input type="text" clearIput="true" readyonly="true" disabled [(ngModel)]="candidato.bloco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Propostas:</ion-label>
+        <ion-textarea type="text" clearIput="true" readyonly="true" disabled rows="5" [(ngModel)]="candidato.propostas"></ion-textarea>
+      </ion-item>
+
+      <ion-card id="qrCode" *ngIf="createdCode">
+        <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+      </ion-card>
+      
+  </ion-list>
+  <ion-list >
+
+  </ion-list>
+
+</ion-content> 

@@ -1,1 +1,14 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>SindicApto</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+      <header-menu></header-menu>
+    </ion-content>
+  
+  </ion-menu>
+<!--swipeBackEnabled="false"-->  
+<ion-nav [root]="rootPage" #content ></ion-nav>

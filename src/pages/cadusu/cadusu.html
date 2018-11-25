@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup] = "form">
+
+        <ion-item>
+          <ion-label stacked>Nome</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty ||
+         form.controls.name.touched)" color="danger">
+            <div [hidden]="!form.controls.name.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Sobrenome</ion-label>
+            <ion-input type="text" formControlName="lastName"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.lastName.valid && (form.controls.lastName.dirty ||
+         form.controls.lastName.touched)" color="danger">
+            <div [hidden]="!form.controls.lastName.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Apartamento</ion-label>
+            <ion-input type="text" formControlName="apartamento"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.apartamento.valid && (form.controls.apartamento.dirty ||
+         form.controls.apartamento.touched)" color="danger">
+            <div [hidden]="!form.controls.apartamento.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Bloco</ion-label>
+            <ion-input type="text" formControlName="bloco"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.bloco.valid && (form.controls.bloco.dirty ||
+         form.controls.bloco.touched)" color="danger">
+            <div [hidden]="!form.controls.bloco.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>E-mail</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty ||
+         form.controls.email.touched)" color="danger">
+            <div [hidden]="!form.controls.email.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Senha</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty ||
+         form.controls.password.touched)" color="danger">
+            <div [hidden]="!form.controls.password.errors.required">
+                <p>O campo é obrigatório</p>
+            </div>
+        </ion-item>
+
+        <div padding>
+          <button ion-button full type="submit" [disabled]="!form.valid"  (click)="registraUsuario()">Salvar</button>  
+        </div>
+    </form>
+</ion-content>

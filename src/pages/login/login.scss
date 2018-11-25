@@ -1,0 +1,51 @@
+page-login {
+    img{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    h2.title{
+        text-align: center;
+    }
+    ion-content{
+        padding: 0px;
+        background-image: url('../assets/imgs/background-login.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    p#register{
+        border:none;
+        text-align: center;
+        position: relative;
+        
+    }
+
+
+    ion-item.login_transp{
+        background-color: transparent;
+        border: none;
+        color: #FFFFFF;
+    }
+
+    ion-footer{
+        background-color: transparent;
+        border: none;
+        color: #FFFFFF;
+        position: absolute;
+    }
+
+    ion-list{
+        position: relative;
+        display: block;
+    }
+
+
+
+
+
+
+}

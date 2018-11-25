@@ -1,0 +1,30 @@
+<ion-content padding>
+  
+    <img src="assets/imgs/logo-icone.png" />
+    <h2 class="title" style="color:#FFFFFF; padding:20px;">SindicApto</h2>
+    
+      <ion-list>
+
+      <ion-item class="login_transp">
+        <ion-label floating>e-mail</ion-label>
+        <ion-input type="e-mail" [(ngModel)]="loginForm.email" clearInput="true"></ion-input>
+      </ion-item>
+    
+      <ion-item class="login_transp">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="loginForm.senha" clearInput="true"></ion-input>
+      </ion-item>
+      
+      <button ion-button (click)="loginUser()"
+      full style="width: 95%; margin-left: auto; margin-right: auto;">Login</button>
+     
+    <button ion-button full color="light" clear id="forgot">Esqueci minha senha</button>
+
+    </ion-list>
+
+    <ion-footer>
+      <p id="register">Não é cadastrado ? 
+        <button ion-button (click)="goToPageRegister()" color="light" clear>Cadastre-se</button></p>
+    </ion-footer>
+  
+</ion-content>

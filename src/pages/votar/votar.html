@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Votar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Meu E-titulo</h2>
+  <ion-list>
+    <ion-card id="qrCode" *ngIf="createdCode" >
+      <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    </ion-card>
+  </ion-list>
+  <button ion-button full icon-left (click)="votar()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Votar</button>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Atualizar Dados
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="updateForm.nome" clearInput="true"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label stacked>Sobrenome</ion-label>
+          <ion-input type="text" [(ngModel)]="updateForm.sobrenome" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Apartamento</ion-label>
+          <ion-input type="text" [(ngModel)]="updateForm.apartamento" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Bloco</ion-label>
+          <ion-input type="text" [(ngModel)]="updateForm.bloco" clearInput="true"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="updateForm.email" clearInput="true"></ion-input>
+      </ion-item>
+      
+    </ion-list>
+      <div padding>
+        <button ion-button full type="submit" (click)="atualizaUsuario()">Salvar</button>  
+        <button ion-button full color="danger" type="submit" (click)="DesativarUsuario()">Desativar minha conta</button>
+      </div>
+
+    
+</ion-content>
