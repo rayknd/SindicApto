@@ -46,9 +46,10 @@ export class CadusuPage {
       apartamento: [this.user.apartamento, Validators.required],
       bloco: [this.user.bloco, Validators.required],
       email: [this.user.email, Validators.required],
-      password: [this.user.password, /*Validators.compose([Validators.minLength(6)]), 
-        Validators.compose([Validators.maxLength(20)]), */ Validators.required],
-      desativado: false  
+      password: [this.user.password, Validators.required],
+      desativado: false,
+      votou: false,
+      autorizado: false  
     });
   }
 
@@ -65,6 +66,8 @@ export class CadusuPage {
         //id único do usuário
         let uid = res.user.uid;
 
+
+
         //Dados que serão salvos no firestone
         let informacoesUsuario = {
           uid: uid,
@@ -73,11 +76,15 @@ export class CadusuPage {
           email: this.form.value.email,
           apartamento: this.form.value.apartamento,
           bloco: this.form.value.bloco,
-          desativado: this.form.value.desativado
+          desativado: this.form.value.desativado,
+          votou: this.form.value.votou,
+          autorizado: this.form.value.autorizado
         };
 
         //Grava uid e data no sqLite
         this.usuariosProvider.insertUsuario(this.form);
+
+        console.log("Gravou no sqlite");
 
         //Grava dados no Firestore
         this.firebase.gravaUsuario(informacoesUsuario)

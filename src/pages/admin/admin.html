@@ -1,20 +1,16 @@
 <ion-header>
+
   <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      Home
-    </ion-title>
+    <ion-title>Home admin</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Bem-vindo, {{user.nome}}</h2>
 
+<ion-content padding>
   <div id="content">
     <div>
-      <button ion-button full color="secondary" (click)="votar()" > Votar </button> 
+      <button ion-button full color="secondary" (click)="validar()" > Validar e-titulo</button> 
     </div>
 
     <div>
@@ -23,6 +19,10 @@
 
     <div>
       <button ion-button full color="danger" (click)="ranking()">Ranking</button>
+    </div>
+
+    <div>
+      <button ion-button full color="dark" (click)="logoff()"> Sair</button>
     </div>
   </div>
 </ion-content>

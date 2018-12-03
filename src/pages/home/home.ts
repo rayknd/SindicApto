@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController,  NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/usuarios/auth';
 import { FirebaseProvider } from '../../providers/usuarios/firebase';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ListaCandidatosPage } from '../lista-candidatos/lista-candidatos';
+import { RankingPage } from '../ranking/ranking';
+import { VotarPage } from '../votar/votar';
 
 @Component({
   selector: 'page-home',
@@ -10,10 +12,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 })
 
 export class HomePage {
-
-  qrData = null;
-  createdCode = null;
-  scannedCode = null;
 
 
   user={
@@ -29,33 +27,35 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
               public firebase:AuthProvider,
               private firebaseProvider: FirebaseProvider,
-              private auth: AuthProvider,
-              private barcode: BarcodeScanner) { 
+              private auth: AuthProvider) { 
                   
   }
 
   ionViewDidLoad(){
     this.buscaDadosUsuarioAtual(this.auth.getCurrentUser());
   } 
-      buscaDadosUsuarioAtual(keyUsuario: string) {
-        console.log(keyUsuario);
-        this.firebaseProvider.buscaUsuarioAtual(keyUsuario)
-          .subscribe(data => this.preencheDadosUsuario(data[0]));
-      }
-      preencheDadosUsuario(usuario) {
-        console.log(usuario);
-        this.user = Object.assign(usuario);
-      }
+  
+  buscaDadosUsuarioAtual(keyUsuario: string) {
+    console.log(keyUsuario);
+    this.firebaseProvider.buscaUsuarioAtual(keyUsuario)
+      .subscribe(data => this.preencheDadosUsuario(data[0]));
+  }
+    
+  preencheDadosUsuario(usuario) {
+    console.log(usuario);
+    this.user = Object.assign(usuario);
+  }
 
-      createCode(){
-        this.createCode = this.qrData;
-      }
+  candidatos(){
+    this.navCtrl.push(ListaCandidatosPage);
+  }
 
-      scanCode(){
-        this.barcode.scan().then(barcodeData=>{
-            this.scannedCode = barcodeData.text;
-        }, (err) => {
-          console.log('error: ', err);
-        });
-      }
+  ranking(){
+    this.navCtrl.push(RankingPage);
+  }
+
+  votar(){
+    this.navCtrl.push(VotarPage);
+  }
+
 }

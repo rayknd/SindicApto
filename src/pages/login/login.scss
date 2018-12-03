@@ -35,7 +35,12 @@ page-login {
         background-color: transparent;
         border: none;
         color: #FFFFFF;
-        position: absolute;
+    }
+
+    .wrapper{
+        min-height: 100%;
+        position: relative;
+        padding-bottom:250px;
     }
 
     ion-list{

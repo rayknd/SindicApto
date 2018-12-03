@@ -31,6 +31,8 @@ import { ListaCandidatosPage } from '../pages/lista-candidatos/lista-candidatos'
 import { CandidatoPage } from '../pages/candidato/candidato';
 import { SortPipe } from '../pipes/sort/sort';
 import { RankingPage } from '../pages/ranking/ranking';
+import { AdminPage } from '../pages/admin/admin';
+import { RecuperarPage } from '../pages/recuperar/recuperar';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCDDlLX2JwVJ9Uww2bwer_S_CtFGS2x5m8",
@@ -54,7 +56,9 @@ export const firebaseConfig = {
     ListaCandidatosPage,
     CandidatoPage,
     SortPipe,
-    RankingPage
+    RankingPage,
+    AdminPage,
+    RecuperarPage
   ],
   imports: [
     BrowserAnimationsModule,
@@ -79,7 +83,9 @@ export const firebaseConfig = {
     VotarPage,
     ListaCandidatosPage,
     CandidatoPage,
-    RankingPage
+    RankingPage,
+    AdminPage, 
+    RecuperarPage
   ],
   providers: [
     StatusBar,

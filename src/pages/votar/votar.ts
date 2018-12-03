@@ -21,7 +21,9 @@ export class VotarPage {
     sobrenome: '',
     apartamento: '',
     bloco: '',
-    votou: false
+    votou: false,
+    autorizado: false,
+    desativado: false
   }
 
   candidato={
@@ -60,18 +62,20 @@ export class VotarPage {
 
   geraQrCode(user){
     let txtCode = {
-      id: user.uid,
+      uid: user.uid,
       nome: user.nome,
       sobrenome: user.sobrenome,
       apartamento: user.apartamento,
       bloco: user.bloco,
-      votou: false
+      votou: false,
+      autorizado: false,
+      desativado: false
     };
     this.createdCode = JSON.stringify(txtCode);
   }
 
   votar(){
-    if(this.user.votou == false){
+    if(this.user.votou == false && this.user.autorizado == true){
       
       this.barcode.scan()
       .then(barcodeData => {
@@ -117,11 +121,21 @@ export class VotarPage {
       
       alerta.setTitle('Votar');
       
-      alerta.setSubTitle('Você já votou!');
+      if(this.user.votou == true){
+        alerta.setSubTitle('Você já votou!');
       
-      alerta.addButton({
+        alerta.addButton({
           text: 'OK'
-      });
+        });
+      }
+      
+      else{
+        alerta.setSubTitle('Não está autorizado a votar!');
+      
+        alerta.addButton({
+          text: 'OK'
+        });
+      }
 
       alerta.present();
     }

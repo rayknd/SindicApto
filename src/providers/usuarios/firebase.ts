@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Injectable()
 export class FirebaseProvider {

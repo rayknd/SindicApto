@@ -8,10 +8,15 @@ export class AuthProvider {
     registro = (data) => this.afAuth.auth.createUserWithEmailAndPassword(data.email, data.password);
 
     login = (data) => this.afAuth.auth.signInWithEmailAndPassword(data.email, data.senha);
+    
+    recuperar = (data) => this.afAuth.auth.sendPasswordResetEmail(data.email);
+
 
     getCurrentUser(){
         return this.afAuth.auth.currentUser.uid;
     }
+
+
 
     logout(){
         this.afAuth.auth.signOut()

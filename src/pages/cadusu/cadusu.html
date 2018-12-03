@@ -64,12 +64,16 @@
 
         <ion-item>
           <ion-label stacked>Senha</ion-label>
-          <ion-input type="password" formControlName="password"></ion-input>
+          <ion-input type="password" formControlName="password" minlength="6"></ion-input>
         </ion-item>
         <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty ||
          form.controls.password.touched)" color="danger">
             <div [hidden]="!form.controls.password.errors.required">
                 <p>O campo é obrigatório</p>
+            </div>
+
+            <div [hidden]="form.controls.password.errors.minlength">
+                 <p>Senha deve possuir mínimo 6 caracteres</p>   
             </div>
         </ion-item>
 

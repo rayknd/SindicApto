@@ -9,7 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class CandidatoPage {
 
   createdCode = null;
-  candidato: any;
+  candidato={
+    uid: '',
+    nome: '',
+    sobrenome: '',
+    idade: 0,
+    apartamento: 0,
+    bloco: '',
+    propostas: '',
+    votos: 0,
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.candidato = this.navParams.data.candidato;
